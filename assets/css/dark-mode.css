@@ -3,12 +3,12 @@ body.dark-mode {
   --theme-text: #F8FAFC;
   --theme-card: rgba(255, 255, 255, 0.03);
   --theme-border: rgba(255, 255, 255, 0.08);
-  --text-muted-color: #94A3B8;
+  --text-muted-color: #A1A1AA;
 }
 
 /* Specific elements for dark mode */
 body.dark-mode .navbar-custom {
-  background: rgba(8, 11, 20, 0.8) !important;
+  background: rgba(11, 7, 20, 0.8) !important;
   border-bottom-color: rgba(255, 255, 255, 0.08) !important;
 }
 
@@ -43,7 +43,7 @@ body.dark-mode .form-control {
 body.dark-mode .form-control:focus {
   background-color: rgba(255, 255, 255, 0.06) !important;
   border-color: var(--secondary-color) !important;
-  box-shadow: 0 0 10px rgba(0, 229, 255, 0.2) !important;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.2) !important;
 }
 
 body.dark-mode .glass-card {
@@ -51,11 +51,11 @@ body.dark-mode .glass-card {
 }
 
 body.dark-mode .glass-card:hover {
-  box-shadow: 0 15px 35px rgba(109, 40, 255, 0.2) !important;
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.2) !important;
 }
 
 body.dark-mode .text-muted {
-  color: #94A3B8 !important;
+  color: #A1A1AA !important;
 }
 
 body.dark-mode .offcanvas {
@@ -95,7 +95,7 @@ body.dark-mode .sidebar-nav-link {
 
 body.dark-mode .sidebar-nav-link.active,
 body.dark-mode .sidebar-nav-link:hover {
-  background: rgba(109, 40, 255, 0.15) !important;
+  background: rgba(124, 58, 237, 0.15) !important;
   color: var(--secondary-color) !important;
   border-left-color: var(--secondary-color) !important;
 }

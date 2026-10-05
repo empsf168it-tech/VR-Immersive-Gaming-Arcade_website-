@@ -58,11 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.scrollY > 50) {
         navbar.style.padding = '0.5rem 0';
         navbar.style.boxShadow = '0 5px 25px rgba(0,0,0,0.3)';
-        navbar.style.background = body.classList.contains('dark-mode') ? 'rgba(8, 11, 20, 0.95)' : 'rgba(248, 250, 252, 0.95)';
+        navbar.style.background = body.classList.contains('dark-mode') ? 'rgba(11, 7, 20, 0.95)' : 'rgba(248, 250, 252, 0.95)';
       } else {
         navbar.style.padding = '1rem 0';
         navbar.style.boxShadow = 'none';
-        navbar.style.background = body.classList.contains('dark-mode') ? 'rgba(8, 11, 20, 0.8)' : 'rgba(248, 250, 252, 0.8)';
+        navbar.style.background = body.classList.contains('dark-mode') ? 'rgba(11, 7, 20, 0.8)' : 'rgba(248, 250, 252, 0.8)';
       }
     });
   }
@@ -100,6 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '"></span>';
+        }
       }
     });
   }
@@ -128,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
           o.style.boxShadow = 'none';
         });
         opt.style.borderColor = 'var(--secondary-color)';
-        opt.style.boxShadow = '0 0 15px rgba(0, 229, 255, 0.3)';
+        opt.style.boxShadow = '0 0 15px rgba(6, 182, 212, 0.3)';
         selectedExperience = opt.getAttribute('data-exp');
         
         // Update price based on experience

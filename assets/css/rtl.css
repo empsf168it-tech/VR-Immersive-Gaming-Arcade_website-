@@ -59,9 +59,7 @@ html[dir="rtl"] .back-to-top.show {
 
 /* Force brand logo SVGs to always layout LTR to prevent text overlapping icon in RTL mode */
 html[dir="rtl"] .navbar-brand svg,
-html[dir="rtl"] .dashboard-brand svg,
-html[dir="rtl"] .navbar-brand svg text,
-html[dir="rtl"] .dashboard-brand svg text {
+html[dir="rtl"] .navbar-brand svg text {
   direction: ltr !important;
 }
 
