@@ -58,11 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.scrollY > 50) {
         navbar.style.padding = '0.5rem 0';
         navbar.style.boxShadow = '0 5px 25px rgba(0,0,0,0.4)';
-        navbar.style.background = body.classList.contains('dark-mode') ? 'rgba(5, 8, 17, 0.95)' : 'rgba(248, 250, 252, 0.95)';
+        navbar.style.background = body.classList.contains('dark-mode') ? 'rgba(7, 7, 10, 0.95)' : 'rgba(253, 251, 249, 0.95)';
       } else {
         navbar.style.padding = '1rem 0';
         navbar.style.boxShadow = 'none';
-        navbar.style.background = body.classList.contains('dark-mode') ? 'rgba(5, 8, 17, 0.85)' : 'rgba(248, 250, 252, 0.8)';
+        navbar.style.background = body.classList.contains('dark-mode') ? 'rgba(7, 7, 10, 0.88)' : 'rgba(253, 251, 249, 0.85)';
       }
     });
   }

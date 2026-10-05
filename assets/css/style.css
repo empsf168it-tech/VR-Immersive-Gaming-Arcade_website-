@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
 
 :root {
-  /* ── Brand Palette (Abyssal Tron - Cobalt Plasma & Laser Red) ── */
-  --primary-color:    #0066FF;
-  --secondary-color:  #FF2E63;
-  --accent-color:     #38BDF8;
-  --highlight-color:  #FF5376;
+  /* ── Brand Palette (Solar Hyperdrive - Neon Orange & Cyber Amber) ── */
+  --primary-color:    #FF5500;
+  --secondary-color:  #FF8800;
+  --accent-color:     #FFAA00;
+  --highlight-color:  #FFC04D;
 
   /* ── Theme Surfaces ── */
-  --dark-bg:          #050811;
-  --dark-bg-secondary:#0C1220;
-  --light-bg:         #F8FAFC;
+  --dark-bg:          #07070A;
+  --dark-bg-secondary:#121016;
+  --light-bg:         #FDFBF9;
   --dark-card:        rgba(255, 255, 255, 0.03);
   --light-card:       rgba(0, 0, 0, 0.02);
   --dark-border:      rgba(255, 255, 255, 0.08);
@@ -214,9 +214,9 @@ label, .form-label {
   padding: 0;
   line-height: 1;
   border-radius: 999px;
-  border: 1px solid rgba(0, 102, 255, 0.25);
-  background: rgba(0, 102, 255, 0.1);
-  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.15);
+  border: 1px solid rgba(255, 85, 0, 0.25);
+  background: rgba(255, 85, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(255, 85, 0, 0.15);
 }
 
 .navbar-toggler i {
@@ -311,7 +311,7 @@ body:not(.dark-mode) .navbar-toggler {
 /* ═══ Premium Buttons ═══ */
 .btn-premium {
   background: var(--primary-color);
-  color: #fff;
+  color: #fff !important;
   border: none;
   font-family: var(--font-heading);
   font-size:   var(--fs-btn);
@@ -321,13 +321,15 @@ body:not(.dark-mode) .navbar-toggler {
   border-radius: 30px;
   padding: 0.65rem 1.6rem;
   transition: var(--transition-smooth);
-  box-shadow: 0 4px 15px rgba(0, 102, 255, 0.35);
+  box-shadow: 0 4px 18px rgba(255, 85, 0, 0.45);
   white-space: nowrap;
 }
 
 .btn-premium:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.45);
+  background: #ff6a1a;
+  color: #fff !important;
+  box-shadow: 0 6px 24px rgba(255, 136, 0, 0.6);
 }
 
 .btn-outline-premium {
@@ -349,6 +351,18 @@ body:not(.dark-mode) .navbar-toggler {
   background: var(--primary-color);
   color: #fff !important;
   transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(255, 85, 0, 0.4);
+}
+
+/* Text Utility Overrides for Orange Theme */
+.text-primary {
+  color: var(--primary-color) !important;
+}
+.text-info {
+  color: var(--secondary-color) !important;
+}
+.text-orange {
+  color: var(--primary-color) !important;
 }
 
 /* Hero Section style */
@@ -374,7 +388,7 @@ body:not(.dark-mode) .navbar-toggler {
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 102, 255, 0.05);
+  background: rgba(255, 85, 0, 0.06);
   pointer-events: none;
 }
 
@@ -382,7 +396,7 @@ body:not(.dark-mode) .navbar-toggler {
   position: absolute;
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.15;
+  opacity: 0.18;
   pointer-events: none;
 }
 
@@ -411,7 +425,7 @@ body:not(.dark-mode) .navbar-toggler {
 .glass-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-  border-color: rgba(0, 102, 255, 0.3);
+  border-color: rgba(255, 85, 0, 0.35);
 }
 
 /* Section Padding & Titles */
