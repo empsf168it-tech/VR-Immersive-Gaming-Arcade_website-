@@ -176,14 +176,109 @@ label, .form-label {
   fill: none;
 }
 
-.logo-ring-1 { stroke: var(--primary-color); }
-.logo-ring-2 { stroke: var(--secondary-color); }
-.logo-ring-3 { stroke: var(--accent-color); }
-.logo-visor { fill: var(--primary-color); stroke: var(--primary-color); }
-.logo-visor-accent { stroke: var(--secondary-color); }
-.logo-visor-dot { fill: #fff; }
-.logo-text-primary { fill: var(--theme-text); }
-.logo-text-secondary { fill: var(--primary-color); }
+/* ═══════════════════════════════════════════════
+   NEO-X ARENA ANIMATED BRAND LOGO
+   ═══════════════════════════════════════════════ */
+.neo-brand-logo {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: visible;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .neo-brand-logo {
+  transform: scale(1.03);
+}
+
+.neo-hex-outer {
+  stroke: var(--primary-color);
+  transform-origin: 25px 25px;
+  animation: neoHexRotate 10s linear infinite !important;
+}
+
+.neo-hex-inner {
+  stroke: var(--secondary-color);
+  opacity: 0.85;
+  transform-origin: 25px 25px;
+  animation: neoHexCounterRotate 7s linear infinite !important;
+}
+
+.neo-visor-body {
+  fill: #08080C;
+  stroke: var(--primary-color);
+}
+
+body:not(.dark-mode) .neo-visor-body {
+  fill: #FFFFFF;
+}
+
+.neo-visor-accent {
+  stroke: var(--secondary-color);
+}
+
+.neo-visor-core {
+  fill: var(--primary-color);
+}
+
+.neo-laser-scan {
+  stroke: var(--secondary-color);
+  transform-origin: 25px 25px;
+  animation: neoLaserSweep 2.4s ease-in-out infinite alternate !important;
+}
+
+.neo-node {
+  fill: var(--secondary-color);
+  transform-origin: center;
+  animation: neoNodePulse 2s ease-in-out infinite !important;
+}
+
+.neo-node-1 { animation-delay: 0s !important; fill: var(--primary-color); }
+.neo-node-2 { animation-delay: 0.5s !important; fill: var(--secondary-color); }
+.neo-node-3 { animation-delay: 1s !important; fill: var(--primary-color); }
+.neo-node-4 { animation-delay: 1.5s !important; fill: var(--secondary-color); }
+
+.neo-visor-x {
+  animation: neoGlowPulse 2.8s ease-in-out infinite alternate !important;
+}
+
+.neo-logo-text-main {
+  fill: var(--theme-text);
+}
+
+.neo-logo-text-sub {
+  fill: var(--primary-color);
+}
+
+.neo-logo-tag {
+  fill: var(--secondary-color);
+  opacity: 0.9;
+}
+
+@keyframes neoHexRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes neoHexCounterRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes neoLaserSweep {
+  0% { transform: translateY(-7px); opacity: 0.2; }
+  50% { opacity: 1; filter: drop-shadow(0 0 3px var(--secondary-color)); }
+  100% { transform: translateY(7px); opacity: 0.2; }
+}
+
+@keyframes neoNodePulse {
+  0%, 100% { opacity: 0.6; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.3); filter: drop-shadow(0 0 4px var(--primary-color)); }
+}
+
+@keyframes neoGlowPulse {
+  0% { filter: drop-shadow(0 0 0px var(--primary-color)); }
+  100% { filter: drop-shadow(0 0 5px rgba(255, 85, 0, 0.7)); }
+}
 
 .nav-link {
   font-family: var(--font-heading);
@@ -927,12 +1022,28 @@ img, video {
    removed from main.js.
    ═══════════════════════════════════════════════ */
 
-*, *::before, *::after {
+*:not(.neo-brand-logo):not(.neo-brand-logo *),
+*::before:not(.neo-brand-logo *),
+*::after:not(.neo-brand-logo *) {
   animation-duration:        0.001ms !important;
   animation-delay:           0ms     !important;
   animation-iteration-count: 1       !important;
   transition-duration:       0.001ms !important;
   transition-delay:          0ms     !important;
+}
+
+.neo-brand-logo,
+.neo-brand-logo *,
+.neo-hex-outer,
+.neo-hex-inner,
+.neo-laser-scan,
+.neo-node,
+.neo-visor-x {
+  animation-duration: revert !important;
+  animation-delay: revert !important;
+  animation-iteration-count: infinite !important;
+  animation-timing-function: linear !important;
+  transition-duration: 0.3s !important;
 }
 
 /* fade-up elements must be immediately visible
