@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
 
 :root {
-  /* ── Brand Palette ── */
-  --primary-color:    #7C3AED;
-  --secondary-color:  #06B6D4;
-  --accent-color:     #A855F7;
-  --highlight-color:  #22D3EE;
+  /* ── Brand Palette (Abyssal Tron - Cobalt Plasma & Laser Red) ── */
+  --primary-color:    #0066FF;
+  --secondary-color:  #FF2E63;
+  --accent-color:     #38BDF8;
+  --highlight-color:  #FF5376;
 
   /* ── Theme Surfaces ── */
-  --dark-bg:          #0B0714;
-  --dark-bg-secondary:#151022;
+  --dark-bg:          #050811;
+  --dark-bg-secondary:#0C1220;
   --light-bg:         #F8FAFC;
   --dark-card:        rgba(255, 255, 255, 0.03);
   --light-card:       rgba(0, 0, 0, 0.02);
@@ -214,9 +214,9 @@ label, .form-label {
   padding: 0;
   line-height: 1;
   border-radius: 999px;
-  border: 1px solid rgba(124, 58, 237, 0.16);
-  background: rgba(124, 58, 237, 0.08);
-  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(0, 102, 255, 0.25);
+  background: rgba(0, 102, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.15);
 }
 
 .navbar-toggler i {
@@ -321,13 +321,13 @@ body:not(.dark-mode) .navbar-toggler {
   border-radius: 30px;
   padding: 0.65rem 1.6rem;
   transition: var(--transition-smooth);
-  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 102, 255, 0.35);
   white-space: nowrap;
 }
 
 .btn-premium:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.45);
 }
 
 .btn-outline-premium {
@@ -374,7 +374,7 @@ body:not(.dark-mode) .navbar-toggler {
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(124, 58, 237, 0.05);
+  background: rgba(0, 102, 255, 0.05);
   pointer-events: none;
 }
 
@@ -411,7 +411,7 @@ body:not(.dark-mode) .navbar-toggler {
 .glass-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-  border-color: rgba(124, 58, 237, 0.2);
+  border-color: rgba(0, 102, 255, 0.3);
 }
 
 /* Section Padding & Titles */
