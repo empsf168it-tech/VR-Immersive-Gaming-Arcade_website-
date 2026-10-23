@@ -32,9 +32,34 @@
                 height: auto !important;
                 padding-top: 90px !important;
                 padding-bottom: 40px !important;
+                position: relative !important;
+            }
+            .hero-content {
+                position: relative !important;
+                z-index: 10 !important;
+                pointer-events: auto !important;
+            }
+            .hero-cta,
+            .hero-cta .btn {
+                position: relative !important;
+                z-index: 20 !important;
+                pointer-events: auto !important;
             }
             .split-hero-img-wrap img {
                 height: 300px !important;
+            }
+        }
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            .hero-cta {
+                gap: 0.75rem !important;
+                justify-content: flex-start !important;
+            }
+            .hero-cta .btn {
+                padding: 0.75rem 1.25rem !important;
+                font-size: 0.85rem !important;
+                letter-spacing: 0.03em !important;
+                min-height: 48px !important;
+                white-space: nowrap !important;
             }
         }
         .tech-badge {
@@ -142,14 +167,13 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav ms-auto align-items-xl-center">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="home2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="home2.html">Games</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
                         <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         <li class="nav-item ms-xl-3 d-flex gap-2 mt-3 mt-xl-0 align-items-center justify-content-center">
-                            <a href="#" id="rtl-toggle" class="topbar-action px-3" aria-label="Toggle RTL">RTL</a>
                             <a href="#" id="theme-toggle" class="topbar-action px-3" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></a>
                         </li>
                     </ul>
@@ -169,9 +193,9 @@
                     <span class="tech-badge">NEXT-GEN VR ENTERTAINMENT</span>
                     <h1 class="hero-title mb-4">Step Into Another Reality</h1>
                     <p class="lead mb-4 text-white-50" style="max-height: 250px; overflow: hidden;">Experience immersive VR games, multiplayer battles, racing simulations, and unforgettable virtual adventures under one roof.</p>
-                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start flex-column flex-sm-row mt-4">
-                        <button type="button" class="btn btn-premium px-5 py-3" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Your Experience</button>
-                        <a href="pricing.html" class="btn btn-outline-premium px-5 py-3">Explore Games</a>
+                    <div class="hero-cta d-flex gap-3 justify-content-center justify-content-lg-start flex-column flex-sm-row flex-wrap mt-4">
+                        <button type="button" class="btn btn-premium px-4 px-xl-5 py-3" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Your Experience</button>
+                        <a href="pricing.html" class="btn btn-outline-premium px-4 px-xl-5 py-3">Explore Games</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -264,33 +288,33 @@
                 <div class="row g-4 justify-content-md-center">
                     <!-- Event 1 -->
                     <div class="col-md-6 col-lg-4 fade-up">
-                        <div class="glass-card event-card p-0 h-100 d-flex flex-column border-0">
+                        <div class="glass-card event-card p-0 h-100 d-flex flex-column border-0 text-start">
                             <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=800&q=80" alt="Family Packages">
-                            <div class="p-4 d-flex flex-column flex-grow-1">
-                                <h4 class="text-white mb-2">Family Packages</h4>
-                                <p class="text-muted small mb-4">Specially tailored game packages suitable for kids and parents. Fun, interactive, and completely safe.</p>
+                            <div class="p-4 d-flex flex-column flex-grow-1 text-start">
+                                <h4 class="text-white mb-2 text-start card-title-aligned">Family Packages</h4>
+                                <p class="text-muted small mb-4 text-start card-desc-aligned">Specially tailored game packages suitable for kids and parents. Fun, interactive, and completely safe.</p>
                                 <button type="button" class="btn btn-outline-premium btn-sm w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Family Slot</button>
                             </div>
                         </div>
                     </div>
                     <!-- Event 2 -->
                     <div class="col-md-6 col-lg-4 fade-up" style="transition-delay: 0.1s;">
-                        <div class="glass-card event-card p-0 h-100 d-flex flex-column border-0">
+                        <div class="glass-card event-card p-0 h-100 d-flex flex-column border-0 text-start">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7QZ7CObwq9sRUvXZ_DEGEenj8RhJCFBLxwsMaOSF-Sb9VvlvifTwuLRyc&s=10" alt="Corporate Team Building">
-                            <div class="p-4 d-flex flex-column flex-grow-1">
-                                <h4 class="text-white mb-2">Corporate Events</h4>
-                                <p class="text-muted small mb-4">Build trust and foster communication through high-impact co-op VR missions. Full arena booking and snack bar inclusion.</p>
+                            <div class="p-4 d-flex flex-column flex-grow-1 text-start">
+                                <h4 class="text-white mb-2 text-start card-title-aligned">Corporate Events</h4>
+                                <p class="text-muted small mb-4 text-start card-desc-aligned">Build trust and foster communication through high-impact co-op VR missions. Full arena booking and snack bar inclusion.</p>
                                 <a href="contact.html" class="btn btn-outline-premium btn-sm w-100 mt-auto">Inquire Now</a>
                             </div>
                         </div>
                     </div>
                     <!-- Event 3 -->
                     <div class="col-md-6 col-lg-4 fade-up" style="transition-delay: 0.2s;">
-                        <div class="glass-card event-card p-0 h-100 d-flex flex-column border-0">
+                        <div class="glass-card event-card p-0 h-100 d-flex flex-column border-0 text-start">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnVtjTEGVMkzpKFA377Vdys3uEw2l_CRCVlNdBKKmixrDQos0TJzxdtUY&s=10" alt="Birthday Parties">
-                            <div class="p-4 d-flex flex-column flex-grow-1">
-                                <h4 class="text-white mb-2">Birthday Parties</h4>
-                                <p class="text-muted small mb-4">Give your child the ultimate futuristic birthday! VR gaming pods, dedicated hosts, and custom cake tables.</p>
+                            <div class="p-4 d-flex flex-column flex-grow-1 text-start">
+                                <h4 class="text-white mb-2 text-start card-title-aligned">Birthday Parties</h4>
+                                <p class="text-muted small mb-4 text-start card-desc-aligned">Give your child the ultimate futuristic birthday! VR gaming pods, dedicated hosts, and custom cake tables.</p>
                                 <a href="contact.html" class="btn btn-outline-premium btn-sm w-100 mt-auto">Book Party</a>
                             </div>
                         </div>
@@ -356,13 +380,13 @@
         </section>
 
         <!-- Booking CTA Section -->
-        <section class="section-padding position-relative overflow-hidden">
+        <section class="section-padding position-relative overflow-hidden booking-cta-section">
             <div class="glow-orb" style="width: 500px; height: 500px; background: var(--primary-color); top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.2;"></div>
             <div class="container position-relative z-2">
-                <div class="glass-card text-center py-5 fade-up" style="background: rgba(8,11,20,0.6) !important;">
+                <div class="glass-card booking-cta-card text-center py-5 px-3 px-sm-4 px-md-5 fade-up" style="background: rgba(8,11,20,0.6) !important;">
                     <h2 class="text-white mb-4">Ready to Step Beyond Reality?</h2>
                     <p class="text-muted mb-5 mx-auto" style="max-width: 600px;">Secure your VR station today. Select your games, pick a suitable time slot, invite your friends, and skip the wait times!</p>
-                    <button type="button" class="btn btn-premium px-5 py-3" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Your Station Now</button>
+                    <button type="button" class="btn btn-premium booking-cta-btn px-4 px-sm-5 py-3" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Your Station Now</button>
                 </div>
             </div>
         </section>

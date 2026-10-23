@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
     
-    <!-- Custom Page Styles for Home 1 -->
+    <!-- Custom Page Styles for Home -->
     <style>
         .hero-visual-card {
             border-radius: 30px;
@@ -28,6 +28,35 @@
             box-shadow: 0 20px 40px rgba(124, 58, 237, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
+        }
+        @media (max-width: 991.98px) {
+            .hero-section {
+                position: relative !important;
+            }
+            .hero-content {
+                position: relative !important;
+                z-index: 10 !important;
+                pointer-events: auto !important;
+            }
+            .hero-cta,
+            .hero-cta .btn {
+                position: relative !important;
+                z-index: 20 !important;
+                pointer-events: auto !important;
+            }
+        }
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            .hero-cta {
+                gap: 0.75rem !important;
+                justify-content: flex-start !important;
+            }
+            .hero-cta .btn {
+                padding: 0.75rem 1.25rem !important;
+                font-size: 0.85rem !important;
+                letter-spacing: 0.03em !important;
+                min-height: 48px !important;
+                white-space: nowrap !important;
+            }
         }
         .hero-visual-card::after {
             content: '';
@@ -65,6 +94,13 @@
             margin: 0 auto 1.5rem auto;
             transition: var(--transition-smooth);
         }
+        @media (min-width: 992px) {
+            .text-lg-start .feature-icon-wrapper,
+            .glass-card.text-lg-start .feature-icon-wrapper {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+            }
+        }
         .glass-card:hover .feature-icon-wrapper {
             background: var(--primary-color);
             color: var(--text-light);
@@ -85,6 +121,71 @@
         }
         .glass-card:hover .card-img-top-wrap img {
             transform: scale(1.1);
+        }
+        /* Experience cards vertical text alignment at 1024px & general */
+        .featured-card h4,
+        .card-title-aligned {
+            min-height: 2.8em;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.75rem !important;
+            line-height: 1.35 !important;
+        }
+        .featured-card p,
+        .card-desc-aligned {
+            min-height: 4.8em;
+            line-height: 1.55 !important;
+            margin-bottom: 1.5rem !important;
+        }
+        .featured-card-footer {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+            width: 100%;
+        }
+        .featured-card-footer .text-info {
+            white-space: nowrap !important;
+            flex-shrink: 0;
+            font-size: 0.85rem !important;
+        }
+        .featured-card .btn-outline-premium,
+        .featured-card-footer .btn {
+            padding: 0.4rem 0.85rem !important;
+            font-size: 0.78rem !important;
+            letter-spacing: 0.03em !important;
+            white-space: nowrap !important;
+            flex-shrink: 0;
+        }
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            .featured-card.p-4 {
+                padding: 1.25rem !important;
+            }
+            .featured-card h4,
+            .card-title-aligned {
+                font-size: 1.15rem !important;
+                min-height: 2.9em;
+            }
+            .featured-card p,
+            .card-desc-aligned {
+                min-height: 5.2em;
+                font-size: 0.92rem !important;
+            }
+            .featured-card-footer .text-info {
+                font-size: 0.78rem !important;
+            }
+            .featured-card .btn-outline-premium,
+            .featured-card-footer .btn {
+                padding: 0.32rem 0.7rem !important;
+                font-size: 0.72rem !important;
+                letter-spacing: 0.02em !important;
+            }
+            .col-lg-3 .glass-card h4 {
+                min-height: 2.85em;
+                display: flex;
+                align-items: flex-start;
+                font-size: 1.1rem !important;
+            }
         }
     </style>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307070A'/%3E%3Cpolygon points='32,8 54,20 54,44 32,56 10,44 10,20' fill='none' stroke='%23FF5500' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='%23FFAA00' stroke-width='2' stroke-dasharray='4 2'/%3E%3Cpath d='M22 26h20a2 2 0 0 1 2 2v6a3 3 0 0 1-3 3H23a3 3 0 0 1-3-3v-6a2 2 0 0 1 2-2z' fill='%23FF5500'/%3E%3Cpath d='M26 29l6 3-6 3M38 29l-6 3 6 3' stroke='%23FFF' stroke-width='1.5' fill='none'/%3E%3C/svg%3E">
@@ -149,14 +250,13 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav ms-auto align-items-xl-center">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home 1</a></li>
-                        <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home2.html">Games</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
                         <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         <li class="nav-item ms-xl-3 d-flex gap-2 mt-3 mt-xl-0 align-items-center justify-content-center">
-                            <a href="#" id="rtl-toggle" class="topbar-action px-3" aria-label="Toggle RTL">RTL</a>
                             <a href="#" id="theme-toggle" class="topbar-action px-3" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></a>
                         </li>
                     </ul>
@@ -177,10 +277,10 @@
                 <div class="col-lg-6 text-center text-lg-start">
                     <p class="text-uppercase fw-bold text-info small mb-3" style="letter-spacing: 2px;">NEXT-GEN VR ENTERTAINMENT</p>
                     <h1 class="hero-title mb-4">Step Into Another Reality</h1>
-                    <p class="lead mb-5 text-white-50" style="max-width: 550px;">Experience immersive VR games, multiplayer battles, racing simulations, and unforgettable virtual adventures under one roof.</p>
-                    <div class="hero-cta d-flex gap-3 justify-content-center justify-content-lg-start flex-column flex-sm-row">
-                        <button type="button" class="btn btn-premium px-5 py-3" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Your Experience</button>
-                        <a href="pricing.html" class="btn btn-outline-premium px-5 py-3">Explore Games</a>
+                    <p class="lead mb-5 text-white-50 mx-auto mx-lg-0" style="max-width: 550px;">Experience immersive VR games, multiplayer battles, racing simulations, and unforgettable virtual adventures under one roof.</p>
+                    <div class="hero-cta d-flex gap-3 justify-content-center justify-content-lg-start flex-column flex-sm-row flex-wrap">
+                        <button type="button" class="btn btn-premium px-4 px-xl-5 py-3" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Your Experience</button>
+                        <a href="pricing.html" class="btn btn-outline-premium px-4 px-xl-5 py-3">Explore Games</a>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center position-relative">
@@ -198,54 +298,56 @@
         <!-- Featured Experiences (Swiper) -->
         <section class="section-padding" style="background: rgba(255,255,255,0.01);">
             <div class="container">
-                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-5 fade-up">
-                    <div class="text-center text-md-start">
-                        <h2 class="section-title text-start">Featured VR Experiences</h2>
+                <div class="row align-items-end justify-content-between mb-5 fade-up">
+                    <div class="col-md-8 text-center text-md-start">
+                        <h2 class="section-title text-start mb-2">Featured VR Experiences</h2>
                         <p class="text-muted mb-0">Our top picks for absolute immersive entertainment and multiplayer adventures.</p>
                     </div>
-                    <a href="pricing.html" class="btn btn-outline-premium mt-4 mt-md-0">View All Games</a>
+                    <div class="col-md-4 text-center text-md-end mt-4 mt-md-0">
+                        <a href="pricing.html" class="btn btn-outline-premium">View All Games</a>
+                    </div>
                 </div>
 
                 <div class="row g-4">
                     <!-- Card 1 -->
                     <div class="col-lg-4">
-                        <div class="glass-card p-4 h-100 d-flex flex-column">
+                        <div class="glass-card featured-card p-4 h-100 d-flex flex-column text-start">
                             <div class="card-img-top-wrap">
                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDJVJPW1FenTFkZV3Kf7AJ3zDolTMUZGITcjbRr8s4XozxHO5q-CiFyrs&s=10" alt="VR Action Games">
                             </div>
-                            <h4 class="text-white mb-2">VR Action Games</h4>
-                            <p class="text-muted small mb-4">Fight off hordes of the undead together with your friends in tactical combat and post-apocalyptic environments.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-auto">
-                                <span class="text-info small"><i class="fa-regular fa-clock me-1"></i> 45 Mins</span>
-                                <button type="button" class="btn btn-outline-premium btn-sm py-2" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Session</button>
+                            <h4 class="text-white mb-2 text-start card-title-aligned">VR Action Games</h4>
+                            <p class="text-muted small mb-4 text-start card-desc-aligned">Fight off hordes of the undead together with your friends in tactical combat and post-apocalyptic environments.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto featured-card-footer">
+                                <span class="text-info small text-nowrap"><i class="fa-regular fa-clock me-1"></i> 45 Mins</span>
+                                <button type="button" class="btn btn-outline-premium btn-sm" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Session</button>
                             </div>
                         </div>
                     </div>
                     <!-- Card 2 -->
                     <div class="col-lg-4">
-                        <div class="glass-card p-4 h-100 d-flex flex-column">
+                        <div class="glass-card featured-card p-4 h-100 d-flex flex-column text-start">
                             <div class="card-img-top-wrap">
                                 <img src="https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?w=800&q=80" alt="Fantasy & Sci-Fi Worlds" style="object-position: top;">
                             </div>
-                            <h4 class="text-white mb-2">Fantasy & Sci-Fi Worlds</h4>
-                            <p class="text-muted small mb-4">Navigate through starry galaxies, steer cosmic spaceships, and explore uncharted alien civilizations.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-auto">
-                                <span class="text-info small"><i class="fa-regular fa-clock me-1"></i> 60 Mins</span>
-                                <button type="button" class="btn btn-outline-premium btn-sm py-2" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Session</button>
+                            <h4 class="text-white mb-2 text-start card-title-aligned">Fantasy & Sci-Fi Worlds</h4>
+                            <p class="text-muted small mb-4 text-start card-desc-aligned">Navigate through starry galaxies, steer cosmic spaceships, and explore uncharted alien civilizations.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto featured-card-footer">
+                                <span class="text-info small text-nowrap"><i class="fa-regular fa-clock me-1"></i> 60 Mins</span>
+                                <button type="button" class="btn btn-outline-premium btn-sm" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Session</button>
                             </div>
                         </div>
                     </div>
                     <!-- Card 3 -->
                     <div class="col-lg-4">
-                        <div class="glass-card p-4 h-100 d-flex flex-column">
+                        <div class="glass-card featured-card p-4 h-100 d-flex flex-column text-start">
                             <div class="card-img-top-wrap">
                                 <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80" alt="Racing & Driving Simulators">
                             </div>
-                            <h4 class="text-white mb-2">Racing & Driving Simulators</h4>
-                            <p class="text-muted small mb-4">Sit inside full-motion gaming rigs and race precision supercars around world-famous championship tracks.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-auto">
-                                <span class="text-info small"><i class="fa-regular fa-clock me-1"></i> 30 Mins</span>
-                                <button type="button" class="btn btn-outline-premium btn-sm py-2" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Session</button>
+                            <h4 class="text-white mb-2 text-start card-title-aligned">Racing & Driving Simulators</h4>
+                            <p class="text-muted small mb-4 text-start card-desc-aligned">Sit inside full-motion gaming rigs and race precision supercars around world-famous championship tracks.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto featured-card-footer">
+                                <span class="text-info small text-nowrap"><i class="fa-regular fa-clock me-1"></i> 30 Mins</span>
+                                <button type="button" class="btn btn-outline-premium btn-sm" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Session</button>
                             </div>
                         </div>
                     </div>
@@ -471,13 +573,13 @@
         </section>
 
         <!-- Booking CTA Section -->
-        <section class="section-padding position-relative overflow-hidden">
+        <section class="section-padding position-relative overflow-hidden booking-cta-section">
             <div class="glow-orb" style="width: 500px; height: 500px; background: var(--primary-color); top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.2;"></div>
             <div class="container position-relative z-2">
-                <div class="glass-card text-center py-5 fade-up" style="background: rgba(8,11,20,0.6) !important;">
+                <div class="glass-card booking-cta-card text-center py-5 px-3 px-sm-4 px-md-5 fade-up" style="background: rgba(8,11,20,0.6) !important;">
                     <h2 class="text-white mb-4">Ready to enter another reality?</h2>
                     <p class="text-muted mb-5 mx-auto" style="max-width: 600px;">Book your VR experience today. Choose your games, select your time slot, bring your friends, and start playing!</p>
-                    <button type="button" class="btn btn-premium px-5 py-3" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Your Experience Now</button>
+                    <button type="button" class="btn btn-premium booking-cta-btn px-4 px-sm-5 py-3" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Your Experience Now</button>
                 </div>
             </div>
         </section>

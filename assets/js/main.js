@@ -258,4 +258,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Mobile touch hover feedback for buttons
+  const touchInteractiveBtns = document.querySelectorAll('.btn-premium, .btn-outline-premium, .hero-cta .btn, .btn');
+  touchInteractiveBtns.forEach(btn => {
+    btn.addEventListener('touchstart', () => {
+      btn.classList.add('is-hovered');
+    }, { passive: true });
+    btn.addEventListener('touchend', () => {
+      setTimeout(() => btn.classList.remove('is-hovered'), 250);
+    }, { passive: true });
+    btn.addEventListener('touchcancel', () => {
+      btn.classList.remove('is-hovered');
+    }, { passive: true });
+  });
 });

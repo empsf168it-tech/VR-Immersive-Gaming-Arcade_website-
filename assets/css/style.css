@@ -418,13 +418,22 @@ body:not(.dark-mode) .navbar-toggler {
   transition: var(--transition-smooth);
   box-shadow: 0 4px 18px rgba(255, 85, 0, 0.45);
   white-space: nowrap;
+  position: relative;
+  z-index: 6;
+  pointer-events: auto !important;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
-.btn-premium:hover {
+.btn-premium:hover,
+.btn-premium:focus,
+.btn-premium:active,
+.btn-premium.is-hovered {
   transform: translateY(-2px);
-  background: #ff6a1a;
+  background: #ff6a1a !important;
   color: #fff !important;
-  box-shadow: 0 6px 24px rgba(255, 136, 0, 0.6);
+  box-shadow: 0 6px 24px rgba(255, 136, 0, 0.6) !important;
 }
 
 .btn-outline-premium {
@@ -440,13 +449,22 @@ body:not(.dark-mode) .navbar-toggler {
   padding: 0.55rem 1.5rem;
   transition: var(--transition-smooth);
   white-space: nowrap;
+  position: relative;
+  z-index: 6;
+  pointer-events: auto !important;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
-.btn-outline-premium:hover {
-  background: var(--primary-color);
+.btn-outline-premium:hover,
+.btn-outline-premium:focus,
+.btn-outline-premium:active,
+.btn-outline-premium.is-hovered {
+  background: var(--primary-color) !important;
   color: #fff !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 18px rgba(255, 85, 0, 0.4);
+  box-shadow: 0 4px 18px rgba(255, 85, 0, 0.4) !important;
 }
 
 /* Text Utility Overrides for Orange Theme */
@@ -478,6 +496,43 @@ body:not(.dark-mode) .navbar-toggler {
   background: var(--primary-color);
   opacity: 0.05;
   z-index: 1;
+  pointer-events: none !important;
+}
+
+.hero-content {
+  position: relative !important;
+  z-index: 5 !important;
+  pointer-events: auto !important;
+}
+
+.hero-cta {
+  position: relative !important;
+  z-index: 6 !important;
+  pointer-events: auto !important;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero-cta .btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .hero-cta {
+    gap: 0.75rem !important;
+    justify-content: flex-start !important;
+  }
+  .hero-cta .btn {
+    padding: 0.75rem 1.25rem !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.03em !important;
+    min-height: 48px !important;
+    white-space: nowrap !important;
+  }
 }
 
 .hero-overlay {
@@ -927,8 +982,41 @@ body:not(.dark-mode) .table-hover tbody tr:hover td {
 .glass-card h5,
 .glass-card h6 {
   font-family: var(--font-heading);
-  text-align: center !important;
   letter-spacing: 0.03em;
+}
+
+.glass-card.text-center h3,
+.glass-card.text-center h4,
+.glass-card.text-center h5,
+.glass-card.text-center h6,
+.text-center .glass-card h3,
+.text-center .glass-card h4,
+.text-center .glass-card h5,
+.text-center .glass-card h6 {
+  text-align: center;
+}
+
+.glass-card.text-start h3,
+.glass-card.text-start h4,
+.glass-card.text-start h5,
+.glass-card.text-start h6,
+.glass-card.text-start p,
+.glass-card .text-start,
+.text-start .glass-card h3,
+.text-start .glass-card h4,
+.text-start .glass-card h5,
+.text-start .glass-card h6 {
+  text-align: start !important;
+}
+
+@media (min-width: 992px) {
+  .glass-card.text-lg-start h3,
+  .glass-card.text-lg-start h4,
+  .glass-card.text-lg-start h5,
+  .glass-card.text-lg-start h6,
+  .glass-card.text-lg-start p {
+    text-align: start !important;
+  }
 }
 
 .glass-card p,
@@ -1046,6 +1134,18 @@ img, video {
   transition-duration: 0.3s !important;
 }
 
+/* Allow smooth transitions for interactive buttons and links */
+.btn,
+.btn-premium,
+.btn-outline-premium,
+.hero-cta .btn,
+.topbar-action,
+.footer-link,
+.glass-card {
+  transition-duration: 0.25s !important;
+  transition-delay: 0s !important;
+}
+
 /* fade-up elements must be immediately visible
    since GSAP scroll triggers are removed */
 .fade-up {
@@ -1079,3 +1179,199 @@ body:not(.dark-mode) header.position-relative .lead {
     z-index: 1030 !important;
   }
 }
+
+/* Mobile View Button Hover and Stacking Fixes */
+@media (max-width: 991.98px) {
+  .hero-section {
+    position: relative !important;
+  }
+
+  .hero-content {
+    position: relative !important;
+    z-index: 10 !important;
+    pointer-events: auto !important;
+  }
+
+  .hero-cta {
+    position: relative !important;
+    z-index: 20 !important;
+    pointer-events: auto !important;
+    display: flex !important;
+  }
+
+  .hero-cta .btn,
+  .hero-section .btn-premium,
+  .hero-section .btn-outline-premium,
+  .btn-premium,
+  .btn-outline-premium {
+    position: relative !important;
+    z-index: 25 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .btn-premium:hover,
+  .btn-premium:focus,
+  .btn-premium:active,
+  .btn-premium.is-hovered {
+    transform: translateY(-2px) scale(1.02) !important;
+    background: #ff6a1a !important;
+    color: #fff !important;
+    box-shadow: 0 6px 24px rgba(255, 136, 0, 0.6) !important;
+  }
+
+  .btn-outline-premium:hover,
+  .btn-outline-premium:focus,
+  .btn-outline-premium:active,
+  .btn-outline-premium.is-hovered {
+    background: var(--primary-color) !important;
+    color: #fff !important;
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 4px 18px rgba(255, 85, 0, 0.4) !important;
+  }
+}
+
+/* ═══ Booking CTA Section & Button Mobile Alignment Fix ═══ */
+.booking-cta-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.booking-cta-btn {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 991.98px) {
+  .booking-cta-card {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .booking-cta-card,
+  section.section-padding .glass-card.booking-cta-card {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  .booking-cta-btn,
+  .booking-cta-card .btn-premium,
+  section.section-padding .glass-card button.btn-premium {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    padding-top: 0.85rem !important;
+    padding-bottom: 0.85rem !important;
+    white-space: normal !important;
+    word-break: normal;
+    overflow-wrap: break-word;
+    font-size: clamp(0.78rem, 3.2vw, 0.95rem) !important;
+    line-height: 1.35 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-cta-card,
+  section.section-padding .glass-card.booking-cta-card {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .booking-cta-btn,
+  .booking-cta-card .btn-premium,
+  section.section-padding .glass-card button.btn-premium {
+    width: 100% !important;
+    max-width: 295px !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    font-size: 0.82rem !important;
+    letter-spacing: 0.04em !important;
+  }
+}
+
+/* ═══ Experience Cards Vertical Text Alignment (1024px & Responsive) ═══ */
+.featured-card h4,
+.card-title-aligned {
+  min-height: 2.8em;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.75rem !important;
+  line-height: 1.35 !important;
+}
+
+.featured-card p,
+.card-desc-aligned {
+  min-height: 4.8em;
+  line-height: 1.55 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.featured-card-footer {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  width: 100%;
+}
+
+.featured-card-footer .text-info {
+  white-space: nowrap !important;
+  flex-shrink: 0;
+  font-size: 0.85rem !important;
+}
+
+.featured-card .btn-outline-premium,
+.featured-card-footer .btn {
+  padding: 0.4rem 0.85rem !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.03em !important;
+  white-space: nowrap !important;
+  flex-shrink: 0;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .featured-card.p-4 {
+    padding: 1.25rem !important;
+  }
+  .featured-card h4,
+  .card-title-aligned {
+    font-size: 1.15rem !important;
+    min-height: 2.9em;
+  }
+  .featured-card p,
+  .card-desc-aligned {
+    min-height: 5.2em;
+    font-size: 0.92rem !important;
+  }
+  .featured-card-footer .text-info {
+    font-size: 0.78rem !important;
+  }
+  .featured-card .btn-outline-premium,
+  .featured-card-footer .btn {
+    padding: 0.32rem 0.7rem !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.02em !important;
+  }
+  .col-lg-3 .glass-card h4 {
+    min-height: 2.85em;
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.1rem !important;
+  }
+}
+
